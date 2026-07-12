@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Free AI Tools 2026 - Curated list of powerful free AI tools for productivity, content creation, image generation, coding & making money online. Updated for 2026.">
+    <meta name="keywords" content="free AI tools, best AI 2026, AI for beginners, make money with AI, Grok, Claude, Leonardo">
+    <title>FreeAIHub - Best Free AI Tools 2026 | Boost Productivity & Earn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+        :root {
+            --primary: #1e40af;
+            --accent: #22c55e;
+        }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            margin: 0; padding: 0; 
+            background: #f8fafc; 
+            color: #1e2937; 
+            line-height: 1.6; 
+        }
+        .dark-mode {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+        .dark-mode .tool, .dark-mode header { background: #1e2937; }
+        header { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); 
+            color: white; 
+            padding: 5rem 1rem 4rem; 
+            text-align: center; 
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: shine 8s infinite linear;
+        }
+        @keyframes shine { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        header h1 { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-size: 3.2rem; 
+            margin: 0 0 1rem; 
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+        nav { 
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+            z-index: 1000; 
+        }
+        .nav-content { 
+            display: flex; justify-content: space-between; align-items: center; 
+            max-width: 1280px; margin: 0 auto; padding: 1rem; 
+        }
+        .tool-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 1.8rem; 
+        }
+        .tool { 
+            background: white; 
+            border-radius: 16px; 
+            padding: 2rem; 
+            box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            border: 1px solid #e2e8f0;
+        }
+        .tool:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px -10px rgba(30, 64, 175, 0.15); 
+            border-color: var(--primary);
+        }
+        .tool h3 { 
+            margin: 0 0 1rem; 
+            color: var(--primary); 
+            font-size: 1.5rem; 
+        }
+        .category { font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: white; 
+            padding: 14px 32px; 
+            text-decoration: none; 
+            border-radius: 9999px; 
+            font-weight: 600; 
+            font-size: 1.05rem; 
+            margin-top: 1.25rem; 
+            transition: all 0.3s; 
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+        }
+        .btn:hover { 
+            background: #16a34a; 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+        }
+        .disclaimer { font-size: 0.8rem; color: #64748b; margin-top: 1rem; }
+        .section-title { text-align: center; margin: 4rem 0 2.5rem; font-size: 2.2rem; font-family: 'Space Grotesk', sans-serif; }
+        footer { 
+            text-align: center; 
+            padding: 3rem 1rem 2rem; 
+            background: #0f172a; 
+            color: #cbd5e1; 
+        }
+        .toggle-dark { cursor: pointer; padding: 8px 16px; border-radius: 9999px; background: #f1f5f9; }
+        .dark-mode .toggle-dark { background: #334155; color: white; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <span style="font-size:1.8rem;">🤖</span>
+                <h2 style="margin:0; color:var(--primary); font-family:'Space Grotesk',sans-serif;">FreeAIHub</h2>
+            </div>
+            <div style="display:flex; gap:1.5rem; align-items:center;">
+                <a href="#tools" style="color:#1e40af; text-decoration:none; font-weight:500;">Tools</a>
+                <a href="#earn" style="color:#1e40af; text-decoration:none; font-weight:500;">Earn</a>
+                <span onclick="toggleDarkMode()" class="toggle-dark">🌙</span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Best Free AI Tools <span style="color:#22c55e;">2026</span></h1>
+            <p style="font-size:1.5rem; max-width:720px; margin:1.25rem auto 2rem; opacity:0.95;">Hand-curated powerful free AI tools to 10x your productivity, create stunning content, and build real income streams — no credit card required.</p>
+            <a href="#tools" class="btn" style="background:white; color:#0f172a; font-size:1.25rem; padding:16px 40px;">Explore Tools Now</a>
+            <p style="margin-top:2rem; font-size:0.95rem; opacity:0.85;">Updated July 2026 • 100% Free to Start</p>
+        </div>
+    </header>
+
+    <div class="container" id="tools">
+        <h2 class="section-title">Top Free AI Tools</h2>
+        
+        <div class="tool-grid">
+            <div class="tool">
+                <div class="category">Chat & Reasoning</div>
+                <h3>Grok by xAI</h3>
+                <p>Real-time knowledge, advanced reasoning, coding, and fun. Ideal for side hustles, research & content.</p>
+                <a href="https://grok.x.ai" class="btn" target="_blank">Try Grok Free</a>
+                <p class="disclaimer">🔗 Supported by affiliates</p>
+            </div>
+            
+            <div class="tool">
+                <div class="category">Writing & Productivity</div>
+                <h3>Claude by Anthropic</h3>
+                <p>Best-in-class writing, analysis, coding, and creative projects. Generous free tier.</p>
+                <a href="https://claude.ai" class="btn" target="_blank">Start with Claude</a>
+            </div>
+            
+            <div class="tool">
+                <div class="category">Image & Video</div>
+                <h3>Leonardo.ai</h3>
+                <p>Industry-leading AI image, video & 3D generation with daily free credits.</p>
+                <a href="https://leonardo.ai" class="btn" target="_blank">Create Visuals Free</a>
+            </div>
+            
+            <div class="tool">
+                <div class="category">All-Purpose</div>
+                <h3>ChatGPT (OpenAI)</h3>
+                <p>The most popular AI chatbot. Great for brainstorming, scripting, learning.</p>
+                <a href="https://chatgpt.com" class="btn" target="_blank">Chat Free</a>
+            </div>
+            
+            <div class="tool">
+                <div class="category">Research</div>
+                <h3>Perplexity AI</h3>
+                <p>AI-powered search engine with sources and real-time answers.</p>
+                <a href="https://perplexity.ai" class="btn" target="_blank">Search Smarter</a>
+            </div>
+            
+            <div class="tool">
+                <div class="category">Music & Audio</div>
+                <h3>Suno AI</h3>
+                <p>Generate full songs from text prompts. Free tier available.</p>
+                <a href="https://suno.com" class="btn" target="_blank">Make Music</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="earn" style="background:#f1f5f9; padding:4rem 1rem; border-radius:20px; margin:4rem 0;">
+        <h2 class="section-title" style="color:#1e40af;">💰 How to Make Money with These Tools</h2>
+        <div class="tool-grid">
+            <div class="tool">
+                <h3>Freelance Services</h3>
+                <p>Use AI to deliver writing, design, coding gigs faster.</p>
+                <a href="https://www.fiverr.com" class="btn" target="_blank">Join Fiverr →</a>
+            </div>
+            <div class="tool">
+                <h3>Content Creation</h3>
+                <p>Build YouTube channels, blogs, or social media with AI help.</p>
+                <a href="https://www.youtube.com" class="btn" target="_blank">Start on YouTube</a>
+            </div>
+            <div class="tool">
+                <h3>Affiliate & Products</h3>
+                <p>Promote tools & gear. Sell digital products made with AI.</p>
+                <a href="https://amazon.com" class="btn" target="_blank">Amazon Associates</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p style="max-width:600px; margin:0 auto 1.5rem;">FreeAIHub helps you discover the best free AI tools. Some links are affiliate — they help keep this site running at no extra cost to you. Always do your own research.</p>
+            <p>&copy; 2026 FreeAIHub • Made for passive income builders</p>
+            <p style="font-size:0.8rem; margin-top:1rem;">Deploy this on GitHub Pages for free autopilot hosting.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.toggle-dark');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.textContent = '☀️';
+            } else {
+                icon.textContent = '🌙';
+            }
+        }
+    </script>
+</body>
+</html>
