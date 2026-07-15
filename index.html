@@ -48,4 +48,82 @@
 
     <section class="hero">
         <h1>Best AI Tools for Solo Real Estate Agents</h1>
-        <p style="font-size:1.5rem; max-width:720px; margin:0 auto 30px;">Stop doing everything manually. Save 10+ hours a week with the
+        <p style="font-size:1.5rem; max-width:720px; margin:0 auto 30px;">Stop doing everything manually. Save 10+ hours a week with the right AI stack.</p>
+        <a href="#tools" style="background:var(--cnet-red); color:white; padding:18px 42px; border-radius:50px; text-decoration:none; font-size:1.15rem; font-weight:600; display:inline-block;">Explore Tools</a>
+    </section>
+
+    <div class="container">
+        <h2 id="tools" class="section-title">Featured AI Tools</h2>
+        <div class="grid" id="tool-grid"></div>
+    </div>
+
+    <div class="newsletter" id="newsletter">
+        <h2 style="margin-bottom:15px;">Get Fresh AI Tools & Prompts Every Month</h2>
+        <p style="max-width:600px; margin:0 auto 25px;">Real estate-specific tips, new tools, and ready-to-use prompts delivered straight to your inbox.</p>
+        <input type="email" id="email" placeholder="you@email.com" style="padding:16px; width:340px; border-radius:8px; border:1px solid #ccc; font-size:1.1rem;">
+        <button onclick="subscribe()" style="background:var(--cnet-red); color:white; padding:16px 36px; border:none; border-radius:8px; font-size:1.1rem; margin-left:10px; cursor:pointer;">Subscribe Free</button>
+    </div>
+
+    <footer>
+        <p>© 2026 RealtorAI Toolkit • Made for solo agents who want to work smarter</p>
+        <div class="footer-links" style="margin-top:20px;">
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
+            <a href="#">Submit a Tool</a>
+        </div>
+    </footer>
+
+    <script>
+        const tools = [
+            {title: "ChatGPT", cat: "Listing Copy", desc: "Bullet points → professional MLS descriptions in seconds", img: "https://picsum.photos/id/201/600/300", link: "https://chatgpt.com"},
+            {title: "Claude", cat: "Long-Form", desc: "Agent bios, client emails & detailed property narratives", img: "https://picsum.photos/id/237/600/300", link: "https://claude.ai"},
+            {title: "Leonardo AI", cat: "Visuals", desc: "Virtual staging, enhanced photos & social media graphics", img: "https://picsum.photos/id/1015/600/300", link: "https://leonardo.ai"},
+            {title: "Grok", cat: "Social Media", desc: "Catchy real-time captions for new listings & open houses", img: "https://picsum.photos/id/180/600/300", link: "https://grok.x.ai"},
+            {title: "Perplexity", cat: "Research", desc: "Market trends, comps & local data with sources", img: "https://picsum.photos/id/251/600/300", link: "https://perplexity.ai"},
+            {title: "Suno AI", cat: "Video", desc: "Background music for property walkthrough reels", img: "https://picsum.photos/id/866/600/300", link: "https://suno.com"}
+        ];
+
+        function renderTools(filteredTools) {
+            const grid = document.getElementById('tool-grid');
+            grid.innerHTML = '';
+            filteredTools.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.innerHTML = `
+                    <img src="${tool.img}" alt="${tool.title}">
+                    <div class="card-content">
+                        <div class="category">${tool.cat}</div>
+                        <h3>${tool.title}</h3>
+                        <p>${tool.desc}</p>
+                        <a href="${tool.link}" target="_blank" style="color:var(--cnet-red); font-weight:600; display:inline-block; margin-top:12px;">Try it Free →</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function searchTools(input) {
+            const term = input.value.toLowerCase();
+            const filtered = tools.filter(t => 
+                t.title.toLowerCase().includes(term) || 
+                t.desc.toLowerCase().includes(term) ||
+                t.cat.toLowerCase().includes(term)
+            );
+            renderTools(filtered.length ? filtered : tools);
+        }
+
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            if (email) {
+                alert("Thanks! You're now subscribed to RealtorAI updates. 🎉");
+                document.getElementById('email').value = '';
+            } else {
+                alert("Please enter your email.");
+            }
+        }
+
+        // Initial render
+        renderTools(tools);
+    </script>
+</body>
+</html>
