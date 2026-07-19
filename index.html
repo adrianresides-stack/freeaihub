@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RealtorAI Toolkit | Best AI Tools for Solo Real Estate Agents</title>
+    <title>RealtorAI Toolkit | Best AI Tools for Real Estate Agents</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { --cnet-red: #e60012; --dark: #111; }
@@ -28,10 +28,11 @@
         .newsletter { background: #f4f4f4; padding: 60px 20px; text-align: center; margin: 40px 0; border-top: 1px solid #ddd; }
         footer { background: #111; color: #aaa; padding: 70px 20px 40px; text-align: center; font-size: 0.95rem; }
         .footer-links a { color: #aaa; margin: 0 15px; text-decoration: none; }
+        .compliance-note { max-width: 900px; margin: 20px auto 0; font-size: 0.9rem; color: #666; }
     </style>
 </head>
 <body>
-    <div class="top-nav">Independent AI Resource for Solo Real Estate Agents • 2026</div>
+    <div class="top-nav">Independent AI Resource for Real Estate Agents • 2026</div>
 
     <header>
         <div class="main-nav">
@@ -47,7 +48,7 @@
     </header>
 
     <section class="hero">
-        <h1>Best AI Tools for Solo Real Estate Agents</h1>
+        <h1>Best AI Tools for Real Estate Agents</h1>
         <p style="font-size:1.5rem; max-width:720px; margin:0 auto 30px;">Stop doing everything manually. Save 10+ hours a week with the right AI stack.</p>
         <a href="#tools" style="background:var(--cnet-red); color:white; padding:18px 42px; border-radius:50px; text-decoration:none; font-size:1.15rem; font-weight:600; display:inline-block;">Explore Tools</a>
     </section>
@@ -55,6 +56,7 @@
     <div class="container">
         <h2 id="tools" class="section-title">Featured AI Tools</h2>
         <div class="grid" id="tool-grid"></div>
+        <p class="compliance-note">Note: virtual staging is legal in every U.S. state but must be disclosed. Most MLS systems require a "virtually staged" caption on the photo and in the listing remarks, and staging can't misrepresent structural condition.</p>
     </div>
 
     <div class="newsletter" id="newsletter">
@@ -65,7 +67,7 @@
     </div>
 
     <footer>
-        <p>© 2026 RealtorAI Toolkit • Made for solo agents who want to work smarter</p>
+        <p>© 2026 RealtorAI Toolkit • Made for agents who want to work smarter</p>
         <div class="footer-links" style="margin-top:20px;">
             <a href="#">Privacy</a>
             <a href="#">Contact</a>
@@ -75,12 +77,14 @@
 
     <script>
         const tools = [
-            {title: "ChatGPT", cat: "Listing Copy", desc: "Bullet points → professional MLS descriptions in seconds", img: "https://picsum.photos/id/201/600/300", link: "https://chatgpt.com"},
-            {title: "Claude", cat: "Long-Form", desc: "Agent bios, client emails & detailed property narratives", img: "https://picsum.photos/id/237/600/300", link: "https://claude.ai"},
-            {title: "Leonardo AI", cat: "Visuals", desc: "Virtual staging, enhanced photos & social media graphics", img: "https://picsum.photos/id/1015/600/300", link: "https://leonardo.ai"},
-            {title: "Grok", cat: "Social Media", desc: "Catchy real-time captions for new listings & open houses", img: "https://picsum.photos/id/180/600/300", link: "https://grok.x.ai"},
-            {title: "Perplexity", cat: "Research", desc: "Market trends, comps & local data with sources", img: "https://picsum.photos/id/251/600/300", link: "https://perplexity.ai"},
-            {title: "Suno AI", cat: "Video", desc: "Background music for property walkthrough reels", img: "https://picsum.photos/id/866/600/300", link: "https://suno.com"}
+            {title: "ListingAI", cat: "Listing Copy", desc: "MLS-ready descriptions with built-in Fair Housing compliance checks", img: "https://picsum.photos/id/201/600/300", link: "https://www.listingai.co"},
+            {title: "Write.Homes", cat: "Listing Copy", desc: "SEO-optimized listing, social & blog templates with multilingual support", img: "https://picsum.photos/id/106/600/300", link: "https://write.homes"},
+            {title: "REimagine Home", cat: "Virtual Staging", desc: "Turn unfurnished or dated rooms into staged interiors from your own photos", img: "https://picsum.photos/id/1015/600/300", link: "https://reimaginehome.ai"},
+            {title: "Canva", cat: "Social Media", desc: "Magic Design creates on-brand listing graphics & open-house posts in seconds", img: "https://picsum.photos/id/180/600/300", link: "https://canva.com"},
+            {title: "Matterport", cat: "3D Tours", desc: "Immersive walkthroughs that bring in more qualified, serious buyers", img: "https://picsum.photos/id/251/600/300", link: "https://matterport.com"},
+            {title: "Follow Up Boss", cat: "Lead Follow-Up", desc: "Smart lead routing & scoring with AI-suggested next best action", img: "https://picsum.photos/id/60/600/300", link: "https://followupboss.com"},
+            {title: "Otter.ai", cat: "Call Notes", desc: "Free call transcription — turn buyer conversations into follow-up emails fast", img: "https://picsum.photos/id/866/600/300", link: "https://otter.ai"},
+            {title: "Structurely", cat: "Lead Nurture", desc: "AI texts & calls online leads before you ever pick up the phone", img: "https://picsum.photos/id/48/600/300", link: "https://structurely.com"}
         ];
 
         function renderTools(filteredTools) {
@@ -95,7 +99,7 @@
                         <div class="category">${tool.cat}</div>
                         <h3>${tool.title}</h3>
                         <p>${tool.desc}</p>
-                        <a href="${tool.link}" target="_blank" style="color:var(--cnet-red); font-weight:600; display:inline-block; margin-top:12px;">Try it Free →</a>
+                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" style="color:var(--cnet-red); font-weight:600; display:inline-block; margin-top:12px;">Try it →</a>
                     </div>
                 `;
                 grid.appendChild(card);
