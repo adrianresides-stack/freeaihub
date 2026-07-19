@@ -6,25 +6,41 @@
     <title>RealtorAI Toolkit | Best AI Tools for Real Estate Agents</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --cnet-red: #e60012; --dark: #111; }
+        :root { --cnet-red: #e60012; --dark: #111; --gold: #f5a623; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #222; }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #222; background: #f7f7f7; }
         header { background: var(--dark); color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .top-nav { background: #000; padding: 8px 0; font-size: 0.9rem; text-align: center; }
         .main-nav { max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
         .logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; }
-        .nav-menu a { color: white; text-decoration: none; margin: 0 16px; font-weight: 500; }
+        .nav-menu a { color: white; text-decoration: none; margin: 0 16px; font-weight: 600; font-size: 0.95rem; }
         .search-bar { padding: 10px 20px; border-radius: 9999px; border: 1px solid #444; background: #222; color: white; width: 280px; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/800') center/cover no-repeat; color: white; text-align: center; padding: 140px 20px 100px; }
-        .hero h1 { font-size: 3.4rem; max-width: 1000px; margin: 0 auto 20px; }
+
+        .filter-bar { background: white; border-bottom: 1px solid #e5e5e5; position: sticky; top: 64px; z-index: 999; overflow-x: auto; white-space: nowrap; }
+        .filter-tabs { max-width: 1280px; margin: 0 auto; padding: 14px 20px; display: flex; gap: 10px; }
+        .filter-tab { border: 1px solid #ddd; background: white; padding: 8px 18px; border-radius: 9999px; font-size: 0.9rem; font-weight: 600; cursor: pointer; color: #333; transition: all 0.2s; flex-shrink: 0; }
+        .filter-tab:hover { border-color: var(--cnet-red); color: var(--cnet-red); }
+        .filter-tab.active { background: var(--cnet-red); color: white; border-color: var(--cnet-red); }
+
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/800') center/cover no-repeat; color: white; text-align: center; padding: 120px 20px 90px; }
+        .hero h1 { font-size: 3.4rem; font-weight: 900; letter-spacing: -1px; max-width: 1000px; margin: 0 auto 20px; }
         .container { max-width: 1280px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { font-size: 2.1rem; margin-bottom: 30px; border-bottom: 4px solid var(--cnet-red); padding-bottom: 10px; display: inline-block; }
+        .section-title { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 30px; border-bottom: 4px solid var(--cnet-red); padding-bottom: 10px; display: inline-block; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
-        .tool-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+
+        .tool-card { position: relative; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .tool-card:hover { transform: translateY(-10px); box-shadow: 0 25px 35px rgba(0,0,0,0.15); }
         .tool-card img { width: 100%; height: 220px; object-fit: cover; }
         .card-content { padding: 22px; }
-        .category { color: var(--cnet-red); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .category { color: var(--cnet-red); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tool-card h3 { font-size: 1.3rem; font-weight: 800; margin: 4px 0 8px; }
+
+        .score-badge { position: absolute; top: 14px; right: 14px; width: 54px; height: 54px; border-radius: 50%; background: #2e7d32; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; box-shadow: 0 3px 10px rgba(0,0,0,0.3); z-index: 2; }
+        .score-badge .num { font-size: 1.1rem; line-height: 1; }
+        .score-badge .label { font-size: 0.5rem; text-transform: uppercase; letter-spacing: 0.3px; }
+
+        .editors-choice { position: absolute; top: 14px; left: 0; background: var(--gold); color: #1a1a1a; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 6px 14px 6px 12px; border-radius: 0 6px 6px 0; z-index: 2; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+
         .newsletter { background: #f4f4f4; padding: 60px 20px; text-align: center; margin: 40px 0; border-top: 1px solid #ddd; }
         footer { background: #111; color: #aaa; padding: 70px 20px 40px; text-align: center; font-size: 0.95rem; }
         .footer-links a { color: #aaa; margin: 0 15px; text-decoration: none; }
@@ -47,10 +63,14 @@
         </div>
     </header>
 
+    <div class="filter-bar">
+        <div class="filter-tabs" id="filter-tabs"></div>
+    </div>
+
     <section class="hero">
         <h1>Best AI Tools for Real Estate Agents</h1>
         <p style="font-size:1.5rem; max-width:720px; margin:0 auto 30px;">Stop doing everything manually. Save 10+ hours a week with the right AI stack.</p>
-        <a href="#tools" style="background:var(--cnet-red); color:white; padding:18px 42px; border-radius:50px; text-decoration:none; font-size:1.15rem; font-weight:600; display:inline-block;">Explore Tools</a>
+        <a href="#tools" style="background:var(--cnet-red); color:white; padding:18px 42px; border-radius:50px; text-decoration:none; font-size:1.15rem; font-weight:700; display:inline-block;">Explore Tools</a>
     </section>
 
     <div class="container">
@@ -77,15 +97,46 @@
 
     <script>
         const tools = [
-            {title: "ListingAI", cat: "Listing Copy", desc: "MLS-ready descriptions with built-in Fair Housing compliance checks", img: "https://picsum.photos/id/201/600/300", link: "https://www.listingai.co"},
-            {title: "Write.Homes", cat: "Listing Copy", desc: "SEO-optimized listing, social & blog templates with multilingual support", img: "https://picsum.photos/id/106/600/300", link: "https://write.homes"},
-            {title: "REimagine Home", cat: "Virtual Staging", desc: "Turn unfurnished or dated rooms into staged interiors from your own photos", img: "https://picsum.photos/id/1015/600/300", link: "https://reimaginehome.ai"},
-            {title: "Canva", cat: "Social Media", desc: "Magic Design creates on-brand listing graphics & open-house posts in seconds", img: "https://picsum.photos/id/180/600/300", link: "https://canva.com"},
-            {title: "Matterport", cat: "3D Tours", desc: "Immersive walkthroughs that bring in more qualified, serious buyers", img: "https://picsum.photos/id/251/600/300", link: "https://matterport.com"},
-            {title: "Follow Up Boss", cat: "Lead Follow-Up", desc: "Smart lead routing & scoring with AI-suggested next best action", img: "https://picsum.photos/id/60/600/300", link: "https://followupboss.com"},
-            {title: "Otter.ai", cat: "Call Notes", desc: "Free call transcription — turn buyer conversations into follow-up emails fast", img: "https://picsum.photos/id/866/600/300", link: "https://otter.ai"},
-            {title: "Structurely", cat: "Lead Nurture", desc: "AI texts & calls online leads before you ever pick up the phone", img: "https://picsum.photos/id/48/600/300", link: "https://structurely.com"}
+            {title: "ListingAI", cat: "Listing Copy", desc: "MLS-ready descriptions with built-in Fair Housing compliance checks", img: "https://picsum.photos/id/201/600/300", link: "https://www.listingai.co", score: 8.9, editorsChoice: true},
+            {title: "Write.Homes", cat: "Listing Copy", desc: "SEO-optimized listing, social & blog templates with multilingual support", img: "https://picsum.photos/id/106/600/300", link: "https://write.homes", score: 8.1, editorsChoice: false},
+            {title: "REimagine Home", cat: "Virtual Staging", desc: "Turn unfurnished or dated rooms into staged interiors from your own photos", img: "https://picsum.photos/id/1015/600/300", link: "https://reimaginehome.ai", score: 8.4, editorsChoice: true},
+            {title: "Canva", cat: "Social Media", desc: "Magic Design creates on-brand listing graphics & open-house posts in seconds", img: "https://picsum.photos/id/180/600/300", link: "https://canva.com", score: 9.0, editorsChoice: true},
+            {title: "Matterport", cat: "3D Tours", desc: "Immersive walkthroughs that bring in more qualified, serious buyers", img: "https://picsum.photos/id/251/600/300", link: "https://matterport.com", score: 8.6, editorsChoice: false},
+            {title: "Follow Up Boss", cat: "Lead Follow-Up", desc: "Smart lead routing & scoring with AI-suggested next best action", img: "https://picsum.photos/id/60/600/300", link: "https://followupboss.com", score: 8.3, editorsChoice: false},
+            {title: "Otter.ai", cat: "Call Notes", desc: "Free call transcription — turn buyer conversations into follow-up emails fast", img: "https://picsum.photos/id/866/600/300", link: "https://otter.ai", score: 8.7, editorsChoice: false},
+            {title: "Structurely", cat: "Lead Nurture", desc: "AI texts & calls online leads before you ever pick up the phone", img: "https://picsum.photos/id/48/600/300", link: "https://structurely.com", score: 7.9, editorsChoice: false}
         ];
+
+        const categories = ["All", ...new Set(tools.map(t => t.cat))];
+
+        function scoreColor(score) {
+            if (score >= 8.5) return "#2e7d32";
+            if (score >= 7) return "#f5a623";
+            return "#e60012";
+        }
+
+        function scoreLabel(score) {
+            if (score >= 9) return "Exceptional";
+            if (score >= 8.5) return "Excellent";
+            if (score >= 7) return "Good";
+            return "Fair";
+        }
+
+        function renderTabs() {
+            const tabBar = document.getElementById('filter-tabs');
+            tabBar.innerHTML = '';
+            categories.forEach((cat, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-tab' + (i === 0 ? ' active' : '');
+                btn.textContent = cat;
+                btn.onclick = () => {
+                    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderTools(cat === "All" ? tools : tools.filter(t => t.cat === cat));
+                };
+                tabBar.appendChild(btn);
+            });
+        }
 
         function renderTools(filteredTools) {
             const grid = document.getElementById('tool-grid');
@@ -94,12 +145,17 @@
                 const card = document.createElement('div');
                 card.className = 'tool-card';
                 card.innerHTML = `
+                    ${tool.editorsChoice ? '<div class="editors-choice">Editors\' Choice</div>' : ''}
+                    <div class="score-badge" style="background:${scoreColor(tool.score)}">
+                        <span class="num">${tool.score}</span>
+                        <span class="label">${scoreLabel(tool.score)}</span>
+                    </div>
                     <img src="${tool.img}" alt="${tool.title}">
                     <div class="card-content">
                         <div class="category">${tool.cat}</div>
                         <h3>${tool.title}</h3>
                         <p>${tool.desc}</p>
-                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" style="color:var(--cnet-red); font-weight:600; display:inline-block; margin-top:12px;">Try it →</a>
+                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" style="color:var(--cnet-red); font-weight:700; display:inline-block; margin-top:12px;">Try it →</a>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -113,6 +169,8 @@
                 t.desc.toLowerCase().includes(term) ||
                 t.cat.toLowerCase().includes(term)
             );
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector('.filter-tab').classList.add('active');
             renderTools(filtered.length ? filtered : tools);
         }
 
@@ -127,6 +185,7 @@
         }
 
         // Initial render
+        renderTabs();
         renderTools(tools);
     </script>
 </body>
